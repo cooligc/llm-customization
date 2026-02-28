@@ -119,7 +119,7 @@ The source file contains both a human-facing HTML page and a JSON API.
 `fine_tune_rag.py` is a skeleton showing how you could take a TSV file of QA pairs
 and run a full `RagSequenceForGeneration` training loop using 🤗 Transformers.
 The script needs to be fleshed out with proper dataset preprocessing and tokenization
-but demonstrates the key components: retriever creation, tokenizer, and `Trainer`.
+but demonstrates the key components: retriever creation, tokenizer, and `Trainer`. 
 
 ## Extending the pipeline
 
