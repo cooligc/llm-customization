@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IPL GPT-Neo RAG Demo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.6; }
+        h1 { color: #2c3e50; }
+        code { background: #f4f4f4; padding: 0.2rem 0.4rem; border-radius: 3px; }
+        pre { background: #f4f4f4; padding: 1rem; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>IPL GPT-Neo Retrieval-Augmented Generation Demo</h1>
+    <p>This simple application demonstrates how you can build a custom language model and
+       retrieval system over a dataset of <strong>Indian Premier League</strong> cricket events.</p>
+
+    <h2>Purpose</h2>
+    <p>Users can ask questions about match details, players, or events and receive answers generated
+       by a fine-tuned GPT-Neo model. Answers are informed by a ball-by-ball dataset stored in
+       <code>data/IPL.csv</code>. By combining a vector-based retriever with a language model,
+       the system provides <em>retrieval-augmented generation</em> (RAG).</p>
+
+    <h2>How it works</h2>
+    <ol>
+        <li><strong>Preprocessing:</strong> parse the CSV and convert each delivery into a short text passage.</li>
+        <li><strong>Embedding & Indexing:</strong> embed passages using a sentence-transformer and store
+            vectors in a FAISS index for fast similarity search.</li>
+        <li><strong>Fine-tuning:</strong> optionally train GPT-Neo on the passages to adapt its language
+            to cricket terminology.</li>
+        <li><strong>Querying:</strong> when a question is asked, the retriever finds relevant passages,
+            which are prepended to the prompt sent to GPT-Neo. The model then generates an answer
+            conditioned on both the question and the retrieved context.</li>
+    </ol>
+
+    <h2>Getting started</h2>
+    <p>Follow the instructions in the <code>README.md</code>—create a virtual environment, run
+       <code>preprocess.py</code>, <code>index.py</code>, and optionally <code>train.py</code>. Then
+       you can test queries using <code>rag_query.py</code> or visit the web UI at
+       <code>http://localhost:5000</code> after launching <code>web_app.py</code>.</p>
+
+    <h2>Explore further</h2>
+    <ul>
+        <li>Add evaluation datasets and try <code>evaluate.py</code>.</li>
+        <li>Extend the frontend or convert it into an API service.</li>
+        <li>Implement supervised RAG training using <code>fine_tune_rag.py</code>.</li>
+    </ul>
+
+    <p>This page is the landing page for the project and gives a high-level overview of its
+       architecture and purpose.</p>
+</body>
+</html>

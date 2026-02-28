@@ -1,0 +1,7 @@
+pandas
+transformers
+sentence-transformers
+faiss-cpu
+torch
+nltk
+flask
