@@ -4,16 +4,70 @@
     <meta charset="UTF-8">
     <title>IPL GPT-Neo RAG Demo</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.6; }
-        h1 { color: #2c3e50; }
-        code { background: #f4f4f4; padding: 0.2rem 0.4rem; border-radius: 3px; }
-        pre { background: #f4f4f4; padding: 1rem; border-radius: 3px; }
+        /* base styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 2rem auto;
+            max-width: 800px;
+            line-height: 1.6;
+            background: #f0f4f8;
+            color: #333;
+            animation: fadeIn 1s ease-out;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            animation: slideDown 0.8s ease-out;
+        }
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 0.2rem;
+            margin-top: 1.5rem;
+            animation: fadeIn 1s ease-out;
+        }
+        code {
+            background: #ecf0f1;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.95em;
+        }
+        pre {
+            background: #ecf0f1;
+            padding: 1rem;
+            border-radius: 3px;
+            overflow-x: auto;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ol, ul {
+            margin-left: 1.5rem;
+        }
+
+        /* simple animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
     </style>
 </head>
 <body>
     <h1>IPL GPT-Neo Retrieval-Augmented Generation Demo</h1>
     <p>This simple application demonstrates how you can build a custom language model and
        retrieval system over a dataset of <strong>Indian Premier League</strong> cricket events.</p>
+    <div style="text-align:center; margin:1rem 0;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Indian_Premier_League_logo.svg" alt="IPL logo" width="120" />
+    </div>
 
     <h2>Purpose</h2>
     <p>Users can ask questions about match details, players, or events and receive answers generated
